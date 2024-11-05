@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velora One Bottle - Mindful Hydration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #FDF5F3 0%, #FFF8F5 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .brand-orange {
+            color: #E67E22;
+        }
+        .bg-brand-orange {
+            background-color: #E67E22;
+        }
+        .hover-brand-orange:hover {
+            background-color: #D35400;
+        }
+        .text-warm-gray {
+            color: #8B7355;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="logo.png" alt="Velora Logo" class="h-10">
+                    <span class="text-2xl font-bold brand-orange">Velora</span>
+                </div>
+                <div class="space-x-8">
+                    <a href="#features" class="text-warm-gray hover:text-orange-700">Features</a>
+                    <a href="#specifications" class="text-warm-gray hover:text-orange-700">Specifications</a>
+                    <a href="#testimonials" class="text-warm-gray hover:text-orange-700">Testimonials</a>
+                    <a href="checkout.html" class="bg-brand-orange text-white px-6 py-2 rounded-lg hover:bg-opacity-90">
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-6xl font-bold mb-6 text-warm-gray">Mindful Hydration</h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">Experience the perfect blend of minimalist design and conscious living with the Velora One Bottle.</p>
+                    <div class="flex space-x-4 items-center">
+                        <a href="checkout.html" class="bg-brand-orange text-white px-8 py-4 rounded-lg hover:bg-opacity-90 transition duration-300">
+                            Add to Cart - €35
+                        </a>
+                        <p class="text-gray-500">Free Shipping</p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <img src="Velora One Bottle.jpg" alt="Velora One Bottle" class="rounded-2xl shadow-2xl mx-auto hover:shadow-3xl transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-warm-gray">Thoughtfully Crafted</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="feature-card p-8 bg-orange-50 rounded-xl">
+                    <div class="text-orange-600 text-4xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold mb-4 brand-orange">Premium Materials</h3>
+                    <p class="text-gray-600 leading-relaxed">Crafted from high-quality borosilicate glass with a protective silicone sleeve.</p>
+                </div>
+                <div class="feature-card p-8 bg-orange-50 rounded-xl">
+                    <div class="text-orange-600 text-4xl mb-4">♻️</div>
+                    <h3 class="text-xl font-bold mb-4 brand-orange">Eco-Conscious</h3>
+                    <p class="text-gray-600 leading-relaxed">Sustainable materials and recyclable packaging for a mindful future.</p>
+                </div>
+                <div class="feature-card p-8 bg-orange-50 rounded-xl">
+                    <div class="text-orange-600 text-4xl mb-4">💧</div>
+                    <h3 class="text-xl font-bold mb-4 brand-orange">Pure Design</h3>
+                    <p class="text-gray-600 leading-relaxed">Minimalist aesthetic meets practical functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="py-20 bg-orange-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Video Detail for Velora Bottle -->
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <video autoplay loop muted playsinline class="w-full h-full rounded-2xl object-cover shadow-2xl">
+                        <source src="Gen-3 Alpha Turbo 3160849935, Slow motion shot, Cropped - Leonardo_P, M 5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Image Detail for Velora Packaging -->
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <img src="packaging.jpg" alt="Velora Packaging" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section id="specifications" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-warm-gray">Technical Excellence</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="p-6 bg-orange-50 rounded-xl">
+                        <h3 class="font-bold mb-2 brand-orange">Capacity</h3>
+                        <p>1 Liter (34 oz)</p>
+                    </div>
+                    <div class="p-6 bg-orange-50 rounded-xl">
+                        <h3 class="font-bold mb-2 brand-orange">Weight</h3>
+                        <p>0.5 kg (empty)</p>
+                    </div>
+                    <div class="p-6 bg-orange-50 rounded-xl">
+                        <h3 class="font-bold mb-2 brand-orange">Dimensions</h3>
+                        <p>27 cm height, 8 cm diameter</p>
+                    </div>
+                    <div class="p-6 bg-orange-50 rounded-xl">
+                        <h3 class="font-bold mb-2 brand-orange">Materials</h3>
+                        <p>Borosilicate glass, stainless steel cap</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-orange-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-warm-gray">Customer Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <p class="text-gray-600 mb-6 leading-relaxed italic">"The perfect blend of style and sustainability. I love how the terracotta sleeve adds a natural touch."</p>
+                    <p class="font-bold brand-orange">- Maya P.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <p class="text-gray-600 mb-6 leading-relaxed italic">"The glass quality is exceptional, and the metallic cap feels premium. Worth every penny!"</p>
+                    <p class="font-bold brand-orange">- Alex K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-brand-orange text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Join the Mindful Movement</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Experience hydration reimagined with the Velora One Bottle.</p>
+            <a href="checkout.html" class="bg-white px-8 py-4 rounded-lg hover:bg-orange-50 transition duration-300" style="color: #E67E22;">
+                Add to Cart - €35
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <img src="logo.png" alt="Velora Logo" class="mb-6">
+                    <p class="text-gray-400">Mindful Hydration</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Care Guide</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Dishwasher safe (remove sleeve)</li>
+                        <li>Hand wash recommended for cap</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>hello@velora.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 Velora. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

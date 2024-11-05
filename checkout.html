@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Velora One Bottle</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .brand-orange {
+            color: #E67E22;
+        }
+        .bg-brand-orange {
+            background-color: #E67E22;
+        }
+        .hover-brand-orange:hover {
+            background-color: #D35400;
+        }
+        .border-brand-orange {
+            border-color: #E67E22;
+        }
+        .color-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+        .color-dot.selected {
+            border: 2px solid #E67E22;
+        }
+        .gallery-image {
+            transition: all 0.3s ease;
+        }
+        .gallery-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .thumbnail {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        .thumbnail:hover {
+            opacity: 1;
+        }
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid #E67E22;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm w-full">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="logo.png" alt="Velora Logo" class="h-10">
+                    <span class="text-2xl font-bold brand-orange">Velora</span>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600">Checkout</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Product Configuration Section -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-warm-gray">Your Selection</h2>
+
+                <!-- Enhanced Product Gallery -->
+                <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                    <!-- Main Image Display -->
+                    <div class="relative overflow-hidden rounded-lg aspect-w-4 aspect-h-3">
+                        <img 
+                            src="Velora One Bottle.jpg" 
+                            alt="Velora Bottle Natural" 
+                            class="w-full h-full object-cover gallery-image" 
+                            id="mainImage"
+                        >
+                    </div>
+
+                    <!-- Thumbnail Navigation -->
+                    <div class="grid grid-cols-4 gap-4 mt-4">
+                        <img 
+                            src="Velora One Bottle.jpg" 
+                            alt="Natural View" 
+                            class="thumbnail active w-full h-24 object-cover rounded-lg"
+                            onclick="updateMainImage(this, 'Velora One Bottle.jpg')"
+                        >
+                        <img 
+                            src="Leonardo_Phoenix_Recreate_two_isolated_highly_detailed_views_o_1.jpg" 
+                            alt="Detail 1" 
+                            class="thumbnail w-full h-24 object-cover rounded-lg"
+                            onclick="updateMainImage(this, 'Leonardo_Phoenix_Recreate_two_isolated_highly_detailed_views_o_1.jpg')"
+                        >
+                        <img 
+                            src="Leonardo_Phoenix_Recreate_two_isolated_highly_detailed_views_o_2.jpg" 
+                            alt="Detail 2" 
+                            class="thumbnail w-full h-24 object-cover rounded-lg"
+                            onclick="updateMainImage(this, 'Leonardo_Phoenix_Recreate_two_isolated_highly_detailed_views_o_2.jpg')"
+                        >
+                        <img 
+                            src="Leonardo_Phoenix_Recreate_two_isolated_highly_detailed_views_o_3.jpg" 
+                            alt="Detail 3" 
+                            class="thumbnail w-full h-24 object-cover rounded-lg"
+                            onclick="updateMainImage(this, 'Leonardo_Phoenix_Recreate_two_isolated_highly_detailed_views_o_3.jpg')"
+                        >
+                    </div>
+                </div>
+
+                <script>
+                    function updateMainImage(thumbnail, src) {
+                        // Update main image source
+                        const mainImage = document.getElementById('mainImage');
+                        mainImage.src = src;
+                        mainImage.alt = thumbnail.alt;
+
+                        // Update active thumbnail styling
+                        document.querySelectorAll('.thumbnail').forEach(thumb => {
+                            thumb.classList.remove('active');
+                        });
+                        thumbnail.classList.add('active');
+                    }
+                </script>
+
+
+                <!-- Product Options -->
+                <div class="bg-white p-6 rounded-xl shadow-lg space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Select Color</h3>
+                        <div class="flex space-x-4">
+                            <div class="color-dot selected" style="background-color: #B8977E"></div>
+                            <div class="color-dot" style="background-color: #37474F"></div>
+                            <div class="color-dot" style="background-color: #90A4AE"></div>
+                            <div class="color-dot" style="background-color: #D7CCC8"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Quantity</h3>
+                        <div class="flex items-center space-x-4">
+                            <button class="px-4 py-2 border rounded-lg hover:bg-gray-50" onclick="updateQuantity(-1)">-</button>
+                            <span id="quantity" class="text-xl">1</span>
+                            <button class="px-4 py-2 border rounded-lg hover:bg-gray-50" onclick="updateQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Price</h3>
+                        <p class="text-2xl brand-orange">€<span id="totalPrice">35</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Form -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-warm-gray">Shipping Information</h2>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                        <input type="text" class="w-full p-3 border rounded-lg mb-4 focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                        <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none" placeholder="Apartment, suite, etc. (optional)">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                            <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Postal Code</label>
+                            <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                        <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-brand-orange outline-none">
+                            <option>Select Country</option>
+                            <option>United States</option>
+                            <option>Canada</option>
+                            <option>United Kingdom</option>
+                            <option>Germany</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="w-full bg-brand-orange text-white py-4 rounded-lg hover:bg-opacity-90 transition duration-300">
+                    Proceed to Payment - €<span id="checkoutPrice">35</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="mt-20 w-full">
+            <h2 class="text-3xl font-bold text-warm-gray mb-8 text-center">Experience Velora</h2>
+            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl aspect-w-16 aspect-h-9">
+                <video 
+                    class="w-full h-full object-cover"
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline
+                >
+                    <source src="Gen-3 Alpha 956280768, Dynamic motion shot, M 5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let quantity = 1;
+        const basePrice = 35;
+
+        function updateQuantity(change) {
+            quantity = Math.max(1, quantity + change);
+            document.getElementById('quantity').textContent = quantity;
+            updatePrice();
+        }
+
+        function updatePrice() {
+            const total = basePrice * quantity;
+            document.getElementById('totalPrice').textContent = total;
+            document.getElementById('checkoutPrice').textContent = total;
+        }
+
+        function updateMainImage(thumbnail, src) {
+            // Update main image
+            document.getElementById('mainImage').src = src;
+
+            // Update thumbnail selection
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            thumbnail.classList.add('active');
+        }
+
+        // Color selection
+        const colorDots = document.querySelectorAll('.color-dot');
+        colorDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                colorDots.forEach(d => d.classList.remove('selected'));
+                dot.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
